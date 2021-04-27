@@ -37,6 +37,7 @@ namespace Filmfestival.views
             this.label2 = new System.Windows.Forms.Label();
             this.usernametextBox1 = new System.Windows.Forms.TextBox();
             this.passwordtextBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // signinbutton1
@@ -99,12 +100,24 @@ namespace Filmfestival.views
             this.passwordtextBox2.TabIndex = 5;
             this.passwordtextBox2.TextChanged += new System.EventHandler(this.passwordtextBox2_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(649, 376);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 33);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "home";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Jurysignin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(749, 410);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.passwordtextBox2);
             this.Controls.Add(this.usernametextBox1);
             this.Controls.Add(this.label2);
@@ -112,7 +125,7 @@ namespace Filmfestival.views
             this.Controls.Add(this.cancelbutton2);
             this.Controls.Add(this.signinbutton1);
             this.Name = "Jurysignin";
-            this.Text = "test1";
+            this.Text = "jurysignup";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +146,6 @@ namespace Filmfestival.views
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox usernametextBox1;
         private System.Windows.Forms.TextBox passwordtextBox2;
+        private System.Windows.Forms.Button button1;
     }
 }

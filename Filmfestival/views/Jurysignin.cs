@@ -52,6 +52,12 @@ namespace Filmfestival.views
             passwordtextBox2.ForeColor = Color.Red;
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Mainpage mainpage = new Mainpage();
+            mainpage.ShowDialog();
+
+        }
     }
 }
