@@ -35,6 +35,7 @@ namespace Filmfestival.views
             this.guestusernametextBox1 = new System.Windows.Forms.TextBox();
             this.guestcancelbutton2 = new System.Windows.Forms.Button();
             this.guestsigninbutton1 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -59,6 +60,7 @@ namespace Filmfestival.views
             // 
             // guestpasswordtextBox2
             // 
+            this.guestpasswordtextBox2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.guestpasswordtextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guestpasswordtextBox2.Location = new System.Drawing.Point(366, 187);
             this.guestpasswordtextBox2.Name = "guestpasswordtextBox2";
@@ -68,6 +70,7 @@ namespace Filmfestival.views
             // 
             // guestusernametextBox1
             // 
+            this.guestusernametextBox1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.guestusernametextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guestusernametextBox1.Location = new System.Drawing.Point(366, 110);
             this.guestusernametextBox1.Name = "guestusernametextBox1";
@@ -76,31 +79,46 @@ namespace Filmfestival.views
             // 
             // guestcancelbutton2
             // 
+            this.guestcancelbutton2.BackColor = System.Drawing.Color.Orange;
             this.guestcancelbutton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guestcancelbutton2.Location = new System.Drawing.Point(424, 298);
             this.guestcancelbutton2.Name = "guestcancelbutton2";
             this.guestcancelbutton2.Size = new System.Drawing.Size(113, 43);
             this.guestcancelbutton2.TabIndex = 8;
             this.guestcancelbutton2.Text = "cancel";
-            this.guestcancelbutton2.UseVisualStyleBackColor = true;
+            this.guestcancelbutton2.UseVisualStyleBackColor = false;
             // 
             // guestsigninbutton1
             // 
+            this.guestsigninbutton1.BackColor = System.Drawing.Color.Orange;
             this.guestsigninbutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guestsigninbutton1.Location = new System.Drawing.Point(267, 298);
             this.guestsigninbutton1.Name = "guestsigninbutton1";
             this.guestsigninbutton1.Size = new System.Drawing.Size(102, 43);
             this.guestsigninbutton1.TabIndex = 7;
             this.guestsigninbutton1.Text = "signin";
-            this.guestsigninbutton1.UseVisualStyleBackColor = true;
+            this.guestsigninbutton1.UseVisualStyleBackColor = false;
             this.guestsigninbutton1.Click += new System.EventHandler(this.jurysigninbutton1_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Orange;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(712, 404);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 34);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "home";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Guestsigninview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(799, 439);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guestpasswordtextBox2);
@@ -122,5 +140,6 @@ namespace Filmfestival.views
         private System.Windows.Forms.TextBox guestusernametextBox1;
         private System.Windows.Forms.Button guestcancelbutton2;
         private System.Windows.Forms.Button guestsigninbutton1;
+        private System.Windows.Forms.Button button1;
     }
 }

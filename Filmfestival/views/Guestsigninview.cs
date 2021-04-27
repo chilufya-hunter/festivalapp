@@ -46,5 +46,13 @@ namespace Filmfestival.views
             guestpasswordtextBox2.PasswordChar = '*';
             guestpasswordtextBox2.ForeColor = Color.Red;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Mainpage mainpage = new Mainpage();
+            mainpage.ShowDialog();
+
+        }
     }
 }

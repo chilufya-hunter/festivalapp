@@ -16,5 +16,13 @@ namespace Filmfestival.views
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Mainpage mainpage = new Mainpage();
+            mainpage.ShowDialog();
+
+        }
     }
 }

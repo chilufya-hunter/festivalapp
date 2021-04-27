@@ -50,6 +50,7 @@ namespace Filmfestival.views
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.textBox1.Location = new System.Drawing.Point(24, 53);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
@@ -57,6 +58,7 @@ namespace Filmfestival.views
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.textBox2.Location = new System.Drawing.Point(152, 53);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
@@ -64,6 +66,7 @@ namespace Filmfestival.views
             // 
             // textBox3
             // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.textBox3.Location = new System.Drawing.Point(272, 53);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
@@ -71,6 +74,7 @@ namespace Filmfestival.views
             // 
             // textBox4
             // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.textBox4.Location = new System.Drawing.Point(407, 53);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
@@ -78,43 +82,48 @@ namespace Filmfestival.views
             // 
             // updatebutton1
             // 
+            this.updatebutton1.BackColor = System.Drawing.Color.Orange;
             this.updatebutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updatebutton1.Location = new System.Drawing.Point(694, 109);
             this.updatebutton1.Name = "updatebutton1";
             this.updatebutton1.Size = new System.Drawing.Size(106, 53);
             this.updatebutton1.TabIndex = 5;
             this.updatebutton1.Text = "update";
-            this.updatebutton1.UseVisualStyleBackColor = true;
+            this.updatebutton1.UseVisualStyleBackColor = false;
             // 
             // votebutton2
             // 
+            this.votebutton2.BackColor = System.Drawing.Color.Orange;
             this.votebutton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.votebutton2.Location = new System.Drawing.Point(700, 188);
             this.votebutton2.Name = "votebutton2";
             this.votebutton2.Size = new System.Drawing.Size(100, 48);
             this.votebutton2.TabIndex = 6;
             this.votebutton2.Text = "vote";
-            this.votebutton2.UseVisualStyleBackColor = true;
+            this.votebutton2.UseVisualStyleBackColor = false;
             // 
             // deletebutton3
             // 
+            this.deletebutton3.BackColor = System.Drawing.Color.Orange;
             this.deletebutton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deletebutton3.Location = new System.Drawing.Point(702, 268);
             this.deletebutton3.Name = "deletebutton3";
             this.deletebutton3.Size = new System.Drawing.Size(100, 49);
             this.deletebutton3.TabIndex = 7;
             this.deletebutton3.Text = "delete";
-            this.deletebutton3.UseVisualStyleBackColor = true;
+            this.deletebutton3.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.Orange;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(700, 410);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(102, 40);
             this.button4.TabIndex = 8;
             this.button4.Text = "home";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // title
             // 
@@ -176,6 +185,7 @@ namespace Filmfestival.views
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.numericUpDown1.Location = new System.Drawing.Point(545, 53);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);

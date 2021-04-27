@@ -37,45 +37,49 @@ namespace Filmfestival.views
             // 
             // registertoattendbutton1
             // 
+            this.registertoattendbutton1.BackColor = System.Drawing.Color.Orange;
             this.registertoattendbutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registertoattendbutton1.Location = new System.Drawing.Point(144, 66);
             this.registertoattendbutton1.Name = "registertoattendbutton1";
             this.registertoattendbutton1.Size = new System.Drawing.Size(171, 62);
             this.registertoattendbutton1.TabIndex = 0;
             this.registertoattendbutton1.Text = "register\r\nto attend";
-            this.registertoattendbutton1.UseVisualStyleBackColor = true;
+            this.registertoattendbutton1.UseVisualStyleBackColor = false;
             this.registertoattendbutton1.Click += new System.EventHandler(this.registertoattendbutton1_Click);
             // 
             // seeguestlistbutton2
             // 
+            this.seeguestlistbutton2.BackColor = System.Drawing.Color.Orange;
             this.seeguestlistbutton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seeguestlistbutton2.Location = new System.Drawing.Point(144, 165);
             this.seeguestlistbutton2.Name = "seeguestlistbutton2";
             this.seeguestlistbutton2.Size = new System.Drawing.Size(171, 69);
             this.seeguestlistbutton2.TabIndex = 1;
             this.seeguestlistbutton2.Text = " see guest \r\n list";
-            this.seeguestlistbutton2.UseVisualStyleBackColor = true;
+            this.seeguestlistbutton2.UseVisualStyleBackColor = false;
             // 
             // seenominationsbutton3
             // 
+            this.seenominationsbutton3.BackColor = System.Drawing.Color.Orange;
             this.seenominationsbutton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seenominationsbutton3.Location = new System.Drawing.Point(144, 277);
             this.seenominationsbutton3.Name = "seenominationsbutton3";
             this.seenominationsbutton3.Size = new System.Drawing.Size(171, 84);
             this.seenominationsbutton3.TabIndex = 2;
             this.seenominationsbutton3.Text = "see nominations";
-            this.seenominationsbutton3.UseVisualStyleBackColor = true;
+            this.seenominationsbutton3.UseVisualStyleBackColor = false;
             this.seenominationsbutton3.Click += new System.EventHandler(this.seenominationsbutton3_Click);
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.Orange;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(703, 414);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(95, 37);
             this.button4.TabIndex = 3;
             this.button4.Text = "home";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // guestcabinetview

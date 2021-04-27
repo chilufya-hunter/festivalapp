@@ -44,38 +44,42 @@ namespace Filmfestival.views
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Orange;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(217, 337);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 46);
             this.button1.TabIndex = 0;
             this.button1.Text = "sigup";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Orange;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(368, 337);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 46);
             this.button2.TabIndex = 1;
             this.button2.Text = "cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.Orange;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(713, 419);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(86, 33);
             this.button3.TabIndex = 2;
             this.button3.Text = "home";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // jurytextBox1
             // 
+            this.jurytextBox1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.jurytextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jurytextBox1.Location = new System.Drawing.Point(308, 77);
             this.jurytextBox1.Name = "jurytextBox1";
@@ -84,6 +88,7 @@ namespace Filmfestival.views
             // 
             // orgtextBox3
             // 
+            this.orgtextBox3.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.orgtextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orgtextBox3.Location = new System.Drawing.Point(308, 217);
             this.orgtextBox3.Name = "orgtextBox3";
@@ -92,6 +97,7 @@ namespace Filmfestival.views
             // 
             // passtextBox4
             // 
+            this.passtextBox4.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.passtextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passtextBox4.Location = new System.Drawing.Point(308, 158);
             this.passtextBox4.Name = "passtextBox4";
@@ -100,6 +106,7 @@ namespace Filmfestival.views
             // 
             // usertextBox5
             // 
+            this.usertextBox5.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.usertextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usertextBox5.Location = new System.Drawing.Point(308, 116);
             this.usertextBox5.Name = "usertextBox5";
