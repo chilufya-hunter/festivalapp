@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FILM_FESTIVALModel.Store" Provider="Npgsql" ProviderManifestToken="13.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="actor">
+          <Key>
+            <PropertyRef Name="id_actor" />
+          </Key>
+          <Property Name="id_actor" Type="int4" Nullable="false" />
+          <Property Name="fname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lname" Type="varchar" MaxLength="50" />
+          <Property Name="gender" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FILM_FESTIVAL.public.actor_film_director' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="actor_film_director">
+          <Key>
+            <PropertyRef Name="id_film" />
+            <PropertyRef Name="id_director" />
+            <PropertyRef Name="id_actor" />
+          </Key>
+          <Property Name="id_film" Type="int4" Nullable="false" />
+          <Property Name="id_director" Type="int4" Nullable="false" />
+          <Property Name="id_actor" Type="int4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="director">
+          <Key>
+            <PropertyRef Name="id_director" />
+          </Key>
+          <Property Name="id_director" Type="int4" Nullable="false" />
+          <Property Name="fname" Type="varchar" MaxLength="50" />
+          <Property Name="lname" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="film">
+          <Key>
+            <PropertyRef Name="id_film" />
+          </Key>
+          <Property Name="id_film" Type="int4" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rating" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="year" Type="int4" Nullable="false" />
+          <Property Name="duration" Type="int4" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FILM_FESTIVAL.public.film_nomination' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="film_nomination">
+          <Key>
+            <PropertyRef Name="id_film" />
+            <PropertyRef Name="id_director" />
+            <PropertyRef Name="votes" />
+          </Key>
+          <Property Name="id_film" Type="int4" Nullable="false" />
+          <Property Name="id_director" Type="int4" Nullable="false" />
+          <Property Name="category" Type="varchar" MaxLength="50" />
+          <Property Name="votes" Type="int8" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FILM_FESTIVAL.public.userinformation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="userinformation">
+          <Key>
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="user_name" Type="varchar" MaxLength="25" />
+          <Property Name="name" Type="varchar" MaxLength="25" />
+          <Property Name="password" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <Association Name="actor_film_director_film_id_fkey">
+          <End Role="film" Type="Self.film" Multiplicity="1" />
+          <End Role="actor_film_director" Type="Self.actor_film_director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="film">
+              <PropertyRef Name="id_film" />
+            </Principal>
+            <Dependent Role="actor_film_director">
+              <PropertyRef Name="id_film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="actor_film_director_id_actor_fkey">
+          <End Role="actor" Type="Self.actor" Multiplicity="1" />
+          <End Role="actor_film_director" Type="Self.actor_film_director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="actor">
+              <PropertyRef Name="id_actor" />
+            </Principal>
+            <Dependent Role="actor_film_director">
+              <PropertyRef Name="id_actor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="actor_film_director_id_director_fkey">
+          <End Role="director" Type="Self.director" Multiplicity="1" />
+          <End Role="actor_film_director" Type="Self.actor_film_director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="director">
+              <PropertyRef Name="id_director" />
+            </Principal>
+            <Dependent Role="actor_film_director">
+              <PropertyRef Name="id_director" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="film_nomination_id_director_fkey">
+          <End Role="director" Type="Self.director" Multiplicity="1" />
+          <End Role="film_nomination" Type="Self.film_nomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="director">
+              <PropertyRef Name="id_director" />
+            </Principal>
+            <Dependent Role="film_nomination">
+              <PropertyRef Name="id_director" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="film_nomination_id_film_fkey">
+          <End Role="film" Type="Self.film" Multiplicity="1" />
+          <End Role="film_nomination" Type="Self.film_nomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="film">
+              <PropertyRef Name="id_film" />
+            </Principal>
+            <Dependent Role="film_nomination">
+              <PropertyRef Name="id_film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FILM_FESTIVALModelStoreContainer">
+          <EntitySet Name="actor" EntityType="Self.actor" Schema="public" store:Type="Tables" />
+          <EntitySet Name="director" EntityType="Self.director" Schema="public" store:Type="Tables" />
+          <EntitySet Name="film" EntityType="Self.film" Schema="public" store:Type="Tables" />
+          <EntitySet Name="actor_film_director" EntityType="Self.actor_film_director" store:Type="Tables" store:Schema="public">
+            <DefiningQuery>SELECT "actor_film_director"."id_film", "actor_film_director"."id_director", "actor_film_director"."id_actor" FROM "public"."actor_film_director" AS "actor_film_director"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="film_nomination" EntityType="Self.film_nomination" store:Type="Tables" store:Schema="public">
+            <DefiningQuery>SELECT "film_nomination"."id_film", "film_nomination"."id_director", "film_nomination"."category", "film_nomination"."votes" FROM "public"."film_nomination" AS "film_nomination"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="userinformation" EntityType="Self.userinformation" store:Type="Tables" store:Schema="public">
+            <DefiningQuery>SELECT "userinformation"."user_name", "userinformation"."name", "userinformation"."password" FROM "public"."userinformation" AS "userinformation"</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="actor_film_director_film_id_fkey" Association="Self.actor_film_director_film_id_fkey">
+            <End Role="film" EntitySet="film" />
+            <End Role="actor_film_director" EntitySet="actor_film_director" />
+          </AssociationSet>
+          <AssociationSet Name="actor_film_director_id_actor_fkey" Association="Self.actor_film_director_id_actor_fkey">
+            <End Role="actor" EntitySet="actor" />
+            <End Role="actor_film_director" EntitySet="actor_film_director" />
+          </AssociationSet>
+          <AssociationSet Name="actor_film_director_id_director_fkey" Association="Self.actor_film_director_id_director_fkey">
+            <End Role="director" EntitySet="director" />
+            <End Role="actor_film_director" EntitySet="actor_film_director" />
+          </AssociationSet>
+          <AssociationSet Name="film_nomination_id_director_fkey" Association="Self.film_nomination_id_director_fkey">
+            <End Role="director" EntitySet="director" />
+            <End Role="film_nomination" EntitySet="film_nomination" />
+          </AssociationSet>
+          <AssociationSet Name="film_nomination_id_film_fkey" Association="Self.film_nomination_id_film_fkey">
+            <End Role="film" EntitySet="film" />
+            <End Role="film_nomination" EntitySet="film_nomination" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FILM_FESTIVALModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="actor">
+          <Key>
+            <PropertyRef Name="id_actor" />
+          </Key>
+          <Property Name="id_actor" Type="Int32" Nullable="false" />
+          <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="actor_film_director" Relationship="Self.actor_film_director_id_actor_fkey" FromRole="actor" ToRole="actor_film_director" />
+        </EntityType>
+        <EntityType Name="director">
+          <Key>
+            <PropertyRef Name="id_director" />
+          </Key>
+          <Property Name="id_director" Type="Int32" Nullable="false" />
+          <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="actor_film_director" Relationship="Self.actor_film_director_id_director_fkey" FromRole="director" ToRole="actor_film_director" />
+          <NavigationProperty Name="film_nomination" Relationship="Self.film_nomination_id_director_fkey" FromRole="director" ToRole="film_nomination" />
+        </EntityType>
+        <EntityType Name="film">
+          <Key>
+            <PropertyRef Name="id_film" />
+          </Key>
+          <Property Name="id_film" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="rating" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="duration" Type="Int32" Nullable="false" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="actor_film_director" Relationship="Self.actor_film_director_film_id_fkey" FromRole="film" ToRole="actor_film_director" />
+          <NavigationProperty Name="film_nomination" Relationship="Self.film_nomination_id_film_fkey" FromRole="film" ToRole="film_nomination" />
+        </EntityType>
+        <EntityType Name="actor_film_director">
+          <Key>
+            <PropertyRef Name="id_film" />
+            <PropertyRef Name="id_director" />
+            <PropertyRef Name="id_actor" />
+          </Key>
+          <Property Name="id_film" Type="Int32" Nullable="false" />
+          <Property Name="id_director" Type="Int32" Nullable="false" />
+          <Property Name="id_actor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="actor" Relationship="Self.actor_film_director_id_actor_fkey" FromRole="actor_film_director" ToRole="actor" />
+          <NavigationProperty Name="director" Relationship="Self.actor_film_director_id_director_fkey" FromRole="actor_film_director" ToRole="director" />
+          <NavigationProperty Name="film" Relationship="Self.actor_film_director_film_id_fkey" FromRole="actor_film_director" ToRole="film" />
+        </EntityType>
+        <EntityType Name="film_nomination">
+          <Key>
+            <PropertyRef Name="id_film" />
+            <PropertyRef Name="id_director" />
+            <PropertyRef Name="votes" />
+          </Key>
+          <Property Name="id_film" Type="Int32" Nullable="false" />
+          <Property Name="id_director" Type="Int32" Nullable="false" />
+          <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="votes" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="director" Relationship="Self.film_nomination_id_director_fkey" FromRole="film_nomination" ToRole="director" />
+          <NavigationProperty Name="film" Relationship="Self.film_nomination_id_film_fkey" FromRole="film_nomination" ToRole="film" />
+        </EntityType>
+        <EntityType Name="userinformation">
+          <Key>
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="user_name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="actor_film_director_id_actor_fkey">
+          <End Role="actor" Type="Self.actor" Multiplicity="1" />
+          <End Role="actor_film_director" Type="Self.actor_film_director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="actor">
+              <PropertyRef Name="id_actor" />
+            </Principal>
+            <Dependent Role="actor_film_director">
+              <PropertyRef Name="id_actor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="actor_film_director_id_director_fkey">
+          <End Role="director" Type="Self.director" Multiplicity="1" />
+          <End Role="actor_film_director" Type="Self.actor_film_director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="director">
+              <PropertyRef Name="id_director" />
+            </Principal>
+            <Dependent Role="actor_film_director">
+              <PropertyRef Name="id_director" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="film_nomination_id_director_fkey">
+          <End Role="director" Type="Self.director" Multiplicity="1" />
+          <End Role="film_nomination" Type="Self.film_nomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="director">
+              <PropertyRef Name="id_director" />
+            </Principal>
+            <Dependent Role="film_nomination">
+              <PropertyRef Name="id_director" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="actor_film_director_film_id_fkey">
+          <End Role="film" Type="Self.film" Multiplicity="1" />
+          <End Role="actor_film_director" Type="Self.actor_film_director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="film">
+              <PropertyRef Name="id_film" />
+            </Principal>
+            <Dependent Role="actor_film_director">
+              <PropertyRef Name="id_film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="film_nomination_id_film_fkey">
+          <End Role="film" Type="Self.film" Multiplicity="1" />
+          <End Role="film_nomination" Type="Self.film_nomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="film">
+              <PropertyRef Name="id_film" />
+            </Principal>
+            <Dependent Role="film_nomination">
+              <PropertyRef Name="id_film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FILM_FESTIVALEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="actors" EntityType="Self.actor" />
+          <EntitySet Name="directors" EntityType="Self.director" />
+          <EntitySet Name="films" EntityType="Self.film" />
+          <EntitySet Name="actor_film_director" EntityType="Self.actor_film_director" />
+          <EntitySet Name="film_nomination" EntityType="Self.film_nomination" />
+          <EntitySet Name="userinformations" EntityType="Self.userinformation" />
+          <AssociationSet Name="actor_film_director_id_actor_fkey" Association="Self.actor_film_director_id_actor_fkey">
+            <End Role="actor" EntitySet="actors" />
+            <End Role="actor_film_director" EntitySet="actor_film_director" />
+          </AssociationSet>
+          <AssociationSet Name="actor_film_director_id_director_fkey" Association="Self.actor_film_director_id_director_fkey">
+            <End Role="director" EntitySet="directors" />
+            <End Role="actor_film_director" EntitySet="actor_film_director" />
+          </AssociationSet>
+          <AssociationSet Name="film_nomination_id_director_fkey" Association="Self.film_nomination_id_director_fkey">
+            <End Role="director" EntitySet="directors" />
+            <End Role="film_nomination" EntitySet="film_nomination" />
+          </AssociationSet>
+          <AssociationSet Name="actor_film_director_film_id_fkey" Association="Self.actor_film_director_film_id_fkey">
+            <End Role="film" EntitySet="films" />
+            <End Role="actor_film_director" EntitySet="actor_film_director" />
+          </AssociationSet>
+          <AssociationSet Name="film_nomination_id_film_fkey" Association="Self.film_nomination_id_film_fkey">
+            <End Role="film" EntitySet="films" />
+            <End Role="film_nomination" EntitySet="film_nomination" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FILM_FESTIVALModelStoreContainer" CdmEntityContainer="FILM_FESTIVALEntities">
+          <EntitySetMapping Name="actors">
+            <EntityTypeMapping TypeName="FILM_FESTIVALModel.actor">
+              <MappingFragment StoreEntitySet="actor">
+                <ScalarProperty Name="id_actor" ColumnName="id_actor" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="directors">
+            <EntityTypeMapping TypeName="FILM_FESTIVALModel.director">
+              <MappingFragment StoreEntitySet="director">
+                <ScalarProperty Name="id_director" ColumnName="id_director" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="films">
+            <EntityTypeMapping TypeName="FILM_FESTIVALModel.film">
+              <MappingFragment StoreEntitySet="film">
+                <ScalarProperty Name="id_film" ColumnName="id_film" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="country" ColumnName="country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="actor_film_director">
+            <EntityTypeMapping TypeName="FILM_FESTIVALModel.actor_film_director">
+              <MappingFragment StoreEntitySet="actor_film_director">
+                <ScalarProperty Name="id_film" ColumnName="id_film" />
+                <ScalarProperty Name="id_director" ColumnName="id_director" />
+                <ScalarProperty Name="id_actor" ColumnName="id_actor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="film_nomination">
+            <EntityTypeMapping TypeName="FILM_FESTIVALModel.film_nomination">
+              <MappingFragment StoreEntitySet="film_nomination">
+                <ScalarProperty Name="id_film" ColumnName="id_film" />
+                <ScalarProperty Name="id_director" ColumnName="id_director" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="votes" ColumnName="votes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userinformations">
+            <EntityTypeMapping TypeName="FILM_FESTIVALModel.userinformation">
+              <MappingFragment StoreEntitySet="userinformation">
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="678ea4d7b6b6489da0645ec480dd492c" Name="Diagram1" ZoomLevel="66">
+        <EntityTypeShape EntityType="FILM_FESTIVALModel.actor" Width="1.5" PointX="1.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FILM_FESTIVALModel.director" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FILM_FESTIVALModel.film" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FILM_FESTIVALModel.actor_film_director" Width="1.5" PointX="4" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FILM_FESTIVALModel.film_nomination" Width="1.5" PointX="5.875" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FILM_FESTIVALModel.userinformation" Width="1.5" PointX="9.375" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="FILM_FESTIVALModel.actor_film_director_id_actor_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="FILM_FESTIVALModel.actor_film_director_id_director_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="FILM_FESTIVALModel.film_nomination_id_director_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="FILM_FESTIVALModel.actor_film_director_film_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="FILM_FESTIVALModel.film_nomination_id_film_fkey" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
