@@ -5,8 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
+using NpgsqlTypes;
+using Filmfestival.views;
+
+
 
 namespace Filmfestival.views
 {
@@ -19,7 +23,7 @@ namespace Filmfestival.views
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
     }
 }

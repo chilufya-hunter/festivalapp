@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Filmfestival.misc
 {
-    class Globals
+    static class Globals
     {
+        public static Model2 Db = new Model2();
+
+       
     }
 }
