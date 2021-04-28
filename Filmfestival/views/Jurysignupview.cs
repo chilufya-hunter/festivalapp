@@ -39,5 +39,16 @@ namespace Filmfestival.views
             cmd.Parameters.AddWithValue("organisation", orgtextBox3.Text);
             cmd.ExecuteNonQuery();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы действительно хотите выйти?", "Окно отмены", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Close();
+                return;
+
+
+            }
+        }
     }
 }

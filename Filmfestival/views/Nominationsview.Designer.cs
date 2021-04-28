@@ -29,36 +29,33 @@ namespace Filmfestival.views
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.npgsqlCommand1 = new Npgsql.NpgsqlCommand();
-            this.nominationviewmodelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.id_film = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nominationviewmodelsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gold;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.nominationviewmodelsBindingSource;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_film,
+            this.category});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+           // this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // npgsqlCommand1
+            // id_film
             // 
-            this.npgsqlCommand1.AllResultTypesAreUnknown = false;
-            this.npgsqlCommand1.Transaction = null;
-            this.npgsqlCommand1.UnknownResultTypeList = null;
+            this.id_film.Name = "id_film";
             // 
-            // nominationviewmodelsBindingSource
+            // category
             // 
-            this.nominationviewmodelsBindingSource.DataSource = typeof(Filmfestival.viewmodels.Nominationviewmodels);
+            this.category.Name = "category";
             // 
             // Nominationsview
             // 
@@ -69,7 +66,6 @@ namespace Filmfestival.views
             this.Name = "Nominationsview";
             this.Text = "nominationsview";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nominationviewmodelsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -77,7 +73,7 @@ namespace Filmfestival.views
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Npgsql.NpgsqlCommand npgsqlCommand1;
-        private System.Windows.Forms.BindingSource nominationviewmodelsBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_film;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
     }
 }

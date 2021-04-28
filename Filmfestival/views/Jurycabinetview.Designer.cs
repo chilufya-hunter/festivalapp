@@ -41,7 +41,7 @@ namespace Filmfestival.views
             this.jurypanelbutton1.BackColor = System.Drawing.Color.Orange;
             this.jurypanelbutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jurypanelbutton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.jurypanelbutton1.Location = new System.Drawing.Point(122, 71);
+            this.jurypanelbutton1.Location = new System.Drawing.Point(86, 62);
             this.jurypanelbutton1.Name = "jurypanelbutton1";
             this.jurypanelbutton1.Size = new System.Drawing.Size(138, 71);
             this.jurypanelbutton1.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace Filmfestival.views
             this.seeguestlistbutton2.BackColor = System.Drawing.Color.Orange;
             this.seeguestlistbutton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seeguestlistbutton2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.seeguestlistbutton2.Location = new System.Drawing.Point(122, 211);
+            this.seeguestlistbutton2.Location = new System.Drawing.Point(86, 189);
             this.seeguestlistbutton2.Name = "seeguestlistbutton2";
             this.seeguestlistbutton2.Size = new System.Drawing.Size(138, 81);
             this.seeguestlistbutton2.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace Filmfestival.views
             this.button3.BackColor = System.Drawing.Color.Orange;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(436, 211);
+            this.button3.Location = new System.Drawing.Point(334, 189);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(136, 81);
             this.button3.TabIndex = 2;
@@ -79,7 +79,7 @@ namespace Filmfestival.views
             this.button4.BackColor = System.Drawing.Color.Orange;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(697, 412);
+            this.button4.Location = new System.Drawing.Point(549, 309);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(101, 37);
             this.button4.TabIndex = 3;
@@ -92,7 +92,7 @@ namespace Filmfestival.views
             this.winnerslistbutton5.BackColor = System.Drawing.Color.Orange;
             this.winnerslistbutton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winnerslistbutton5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.winnerslistbutton5.Location = new System.Drawing.Point(436, 71);
+            this.winnerslistbutton5.Location = new System.Drawing.Point(334, 62);
             this.winnerslistbutton5.Name = "winnerslistbutton5";
             this.winnerslistbutton5.Size = new System.Drawing.Size(136, 71);
             this.winnerslistbutton5.TabIndex = 4;
@@ -105,7 +105,7 @@ namespace Filmfestival.views
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(657, 349);
             this.Controls.Add(this.winnerslistbutton5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);

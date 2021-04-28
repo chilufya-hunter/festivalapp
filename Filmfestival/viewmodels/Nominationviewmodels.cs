@@ -14,9 +14,8 @@ namespace Filmfestival.viewmodels
         {
             get
             {
-                var filmnominattion = (from Film_festival in Globals.Db.film_nomination select Film_festival).ToList();
-                var query = (from film_nominattion in filmnominattion select new { film_nominattion.id_film, film_nominattion.category }).ToList();
-
+                var movie = (from film in Globals.Db.film_nomination select film).ToList();
+                var query = (from film in movie select new { film.id_film, film.category }).ToList();
                 return query;
             }
         }

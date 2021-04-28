@@ -9,6 +9,9 @@ using System.Windows.Forms;
 using Npgsql;
 using NpgsqlTypes;
 using Filmfestival.views;
+using Filmfestival.misc;
+using Filmfestival.viewmodels;
+using System.Threading.Tasks;
 
 
 
@@ -16,14 +19,25 @@ namespace Filmfestival.views
 {
     public partial class Nominationsview : Form
     {
+        Nominationviewmodels context;
         public Nominationsview()
         {
+            context = new Nominationviewmodels();
+            StartPosition = FormStartPosition.CenterParent;
             InitializeComponent();
+            dataGridView1.ReadOnly = true;
+
+            dataGridView1.DataBindingComplete += (sender, e) =>
+            {
+               dataGridView1.Columns[0].HeaderText = "id_film";
+               dataGridView1.Columns[1].HeaderText = "category";
+            };
+            dataGridView1.DataBindings.Add(new Binding(nameof(dataGridView1.DataSource), context, nameof(context.DataSource), false, DataSourceUpdateMode.Never));
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
+
         }
     }
-}
+    
+    
+

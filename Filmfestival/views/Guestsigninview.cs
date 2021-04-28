@@ -54,5 +54,15 @@ namespace Filmfestival.views
             mainpage.ShowDialog();
 
         }
+
+        private void guestcancelbutton2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы действительно хотите выйти?", "Окно отмены", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Close();
+                return;
+                
+            }
+        }
     }
 }

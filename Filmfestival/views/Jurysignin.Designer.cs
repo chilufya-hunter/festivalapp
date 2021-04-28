@@ -63,6 +63,7 @@ namespace Filmfestival.views
             this.cancelbutton2.TabIndex = 1;
             this.cancelbutton2.Text = "cancel";
             this.cancelbutton2.UseVisualStyleBackColor = false;
+            this.cancelbutton2.Click += new System.EventHandler(this.cancelbutton2_Click);
             // 
             // label1
             // 
@@ -107,7 +108,7 @@ namespace Filmfestival.views
             // 
             this.button1.BackColor = System.Drawing.Color.Orange;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(552, 348);
+            this.button1.Location = new System.Drawing.Point(506, 307);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 33);
             this.button1.TabIndex = 6;
@@ -120,7 +121,7 @@ namespace Filmfestival.views
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
-            this.ClientSize = new System.Drawing.Size(692, 399);
+            this.ClientSize = new System.Drawing.Size(621, 349);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.passwordtextBox2);
             this.Controls.Add(this.usernametextBox1);

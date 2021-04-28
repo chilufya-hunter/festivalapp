@@ -44,7 +44,7 @@ namespace Filmfestival.views
             // 
             this.button1.BackColor = System.Drawing.Color.Orange;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(167, 308);
+            this.button1.Location = new System.Drawing.Point(174, 296);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 44);
             this.button1.TabIndex = 0;
@@ -56,18 +56,19 @@ namespace Filmfestival.views
             // 
             this.button2.BackColor = System.Drawing.Color.Orange;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(374, 308);
+            this.button2.Location = new System.Drawing.Point(357, 296);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(119, 44);
             this.button2.TabIndex = 1;
             this.button2.Text = "cancel";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Orange;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(607, 427);
+            this.button3.Location = new System.Drawing.Point(556, 376);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(105, 38);
             this.button3.TabIndex = 2;
@@ -138,7 +139,7 @@ namespace Filmfestival.views
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
-            this.ClientSize = new System.Drawing.Size(724, 477);
+            this.ClientSize = new System.Drawing.Size(663, 415);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.surnamelabel);

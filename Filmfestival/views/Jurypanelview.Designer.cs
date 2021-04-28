@@ -84,9 +84,9 @@ namespace Filmfestival.views
             // 
             this.updatebutton1.BackColor = System.Drawing.Color.Orange;
             this.updatebutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updatebutton1.Location = new System.Drawing.Point(694, 109);
+            this.updatebutton1.Location = new System.Drawing.Point(702, 109);
             this.updatebutton1.Name = "updatebutton1";
-            this.updatebutton1.Size = new System.Drawing.Size(106, 53);
+            this.updatebutton1.Size = new System.Drawing.Size(98, 53);
             this.updatebutton1.TabIndex = 5;
             this.updatebutton1.Text = "update";
             this.updatebutton1.UseVisualStyleBackColor = false;
