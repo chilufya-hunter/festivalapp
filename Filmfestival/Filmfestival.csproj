@@ -286,11 +286,12 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="director.cs" />
+    <Compile Include="festivalentities.cs" />
     <Compile Include="film.cs" />
     <Compile Include="film_nomination.cs" />
     <Compile Include="misc\BindableBase.cs" />
     <Compile Include="misc\Globals.cs" />
-    <Compile Include="Model2.cs" />
+    <Compile Include="nomination.cs" />
     <Compile Include="userinformation.cs" />
     <Compile Include="viewmodels\attendanceviewmodels.cs" />
     <Compile Include="viewmodels\Guestcabinetviewmodels.cs" />

@@ -29,15 +29,17 @@ namespace Filmfestival.views
 
             dataGridView1.DataBindingComplete += (sender, e) =>
             {
-               dataGridView1.Columns[0].HeaderText = "id_film";
+               dataGridView1.Columns[0].HeaderText = "title";
                dataGridView1.Columns[1].HeaderText = "category";
+               dataGridView1.Columns[2].HeaderText = "rating";
             };
             dataGridView1.DataBindings.Add(new Binding(nameof(dataGridView1.DataSource), context, nameof(context.DataSource), false, DataSourceUpdateMode.Never));
         }
 
-
         }
     }
+    
+    
     
     
 

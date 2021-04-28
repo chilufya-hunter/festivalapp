@@ -29,6 +29,7 @@ namespace Filmfestival.views
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -44,8 +45,14 @@ namespace Filmfestival.views
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dataSet1 = new Filmfestival.DataSet1();
+            this.filmnominationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.film_nominationTableAdapter = new Filmfestival.DataSet1TableAdapters.film_nominationTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmnominationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -191,12 +198,36 @@ namespace Filmfestival.views
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 16;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.filmnominationBindingSource;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(651, 24);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 17;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // filmnominationBindingSource
+            // 
+            this.filmnominationBindingSource.DataMember = "film_nomination";
+            this.filmnominationBindingSource.DataSource = this.dataSet1;
+            // 
+            // film_nominationTableAdapter
+            // 
+            this.film_nominationTableAdapter.ClearBeforeFill = true;
+            // 
             // Jurypanelview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
@@ -214,8 +245,11 @@ namespace Filmfestival.views
             this.Controls.Add(this.textBox1);
             this.Name = "Jurypanelview";
             this.Text = "jurypanelview";
+            this.Load += new System.EventHandler(this.Jurypanelview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmnominationBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +272,9 @@ namespace Filmfestival.views
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource filmnominationBindingSource;
+        private DataSet1TableAdapters.film_nominationTableAdapter film_nominationTableAdapter;
     }
 }

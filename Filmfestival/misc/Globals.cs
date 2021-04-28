@@ -8,7 +8,7 @@ namespace Filmfestival.misc
 {
     static class Globals
     {
-        public static Model2 Db = new Model2();
+        public static festivalentities Db = new festivalentities();
 
        
     }

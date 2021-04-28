@@ -24,5 +24,12 @@ namespace Filmfestival.views
             mainpage.ShowDialog();
 
         }
+
+        private void Jurypanelview_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataSet1.film_nomination' table. You can move, or remove it, as needed.
+            this.film_nominationTableAdapter.Fill(this.dataSet1.film_nomination);
+
+        }
     }
 }
